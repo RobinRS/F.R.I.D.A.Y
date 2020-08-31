@@ -15,4 +15,4 @@ def cmd(entities):
             programEntitie = entities['thing_to_open:thing_to_open'][0]['body']
             return program(programEntitie)
         except KeyError:
-            return "Ich verstehe leider nicht, was ich öffnen soll."
+            return "I don't understand what i should open."
