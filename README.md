@@ -1,7 +1,6 @@
 # F.R.I.D.A.Y
 
- 
-
+![alt tag](/Images/Logo.png) 
 
 F.R.I.D.A.Y is a virtual assistant, which understands your commands via AI NLP (natural language processing), used by wit.ai.
 
