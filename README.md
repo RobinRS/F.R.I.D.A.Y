@@ -1,10 +1,8 @@
 # F.R.I.D.A.Y
 
-<<<<<<< HEAD
  
 
-=======
->>>>>>> 265dcefcd163a78b6422857dc83028c126d80043
+
 F.R.I.D.A.Y is a virtual assistant, which understands your commands via AI NLP (natural language processing), used by wit.ai.
 
 The power of F.R.I.D.A.Y for a developer is the flexibility: Altough the standard name is Friday, you can choose your own. You are able to create your very own functions with python scripts, for example control your water irrigation system just with your command, which is, where many other assistants have their weakness, not an hardcoded if-statement (if weather in user input). No, the user input is processed by the powerful AI natural language processing framework wit.ai (pywit), which is some of the greatest feature of F.R.I.D.A.Y.
