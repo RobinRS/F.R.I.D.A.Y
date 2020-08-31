@@ -1,1 +1,1 @@
-browser_path = "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"
+browser_path = "PASTE IN YOUR BROWSER PATH"
