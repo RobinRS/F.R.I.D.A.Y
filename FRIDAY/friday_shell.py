@@ -5,6 +5,7 @@
 # -------------------------------------------------------------------------------------------------
 
 # Friday Shell
+# Just a simple command-line tool to implement the F.R.I.D.A.Y Core
 
 
 import friday_core as core
