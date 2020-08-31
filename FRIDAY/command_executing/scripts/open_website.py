@@ -3,7 +3,7 @@ import pathlib
 from . import config
 import random
 
-answerList = ['Ok, ich öffne ', 'Ich gehe nun auf ']
+answerList = ["Okay, I'm now opening", "I'm now switching to"]
 
 def open_website(url):
     subprocess.Popen(config.browser_path + " " + url)
