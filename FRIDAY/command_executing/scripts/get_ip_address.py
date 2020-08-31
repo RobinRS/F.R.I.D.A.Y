@@ -1,7 +1,7 @@
 import socket
 import random
 
-IPErrorList = ["Tut mir leid Sir, ich kann meine IP-Adresse leider nicht herausfinden.", "Sir, beim herausfinden der IP ist leider ein Fehler aufgetreten."]
+IPErrorList = ["Sorry Sir, I can't find my IP address.", "Sir, there was an error trying to find the IP."]
 
 def cmd(entities):
     s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
@@ -14,5 +14,5 @@ def cmd(entities):
     finally:
         s.close()
 
-    returnTextList = ["Meine IP-Adresse ist: " + str(IP), "Meine IP-Addresse lautet: " + str(IP)]
+    returnTextList = ["My IP-Address is: " + str(IP)]
     return random.choice(returnTextList)
