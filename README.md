@@ -8,4 +8,10 @@ The power of F.R.I.D.A.Y for a developer is the flexibility: Altough the standar
 
 F.R.I.D.A.Y is very easy to used, and is there to be extended by you. It's the key feature that you write your own function-modules, make it a server or combine it with your mobile Speech-To-Text App on your phone.
 
+SETUP:
+For setting up your own version of F.R.I.D.A.Y please read the SETUP.docx document!
+
+How to contribute?
+Contributing is very appreciated, please read the How to contribute.docx.
+
 For question, suggestions, etc. please join the discord server: https://discord.gg/BFxVZ6
