@@ -2,10 +2,11 @@ import random
 
 def cmd(entities):
     answerList = [
-        "Nein Sir, mir geht es gut, danke der Nachfrage.",
-        "Eigentlich nicht, gute Laune ist mir nämlich einprogrammiert.",
-        "Mir geht es nie schlecht.",
-        "Nein, eigentlich fühle ich mich ganz super. Ist bei ihnen auch alles gut?"
+        "No sir, I'm fine, thanks for asking.",
+        "Not really, because I'm in a good mood ..",
+        "I never feel bad.",
+        "No, actually I feel really great. Is everything okay with you too?",
+        "No, I'm programmed to be happy!"
     ]
 
     return random.choice(answerList)
