@@ -1,6 +1,6 @@
 import random
 
-text = ["Ich bin F.R.I.D.A.Y.", "Ich bin F.R.I.D.A.Y, eine künstliche Intelligenz, um Mr Kaupa zu unterstützen.", "Mein Name ist F.R.I.D.A.Y."]
+text = ["I am F.R.I.D.A.Y.", "I am F.R.I.D.A.Y, an artificial intelligence for supporting you.", "My name is F.R.I.D.A.Y."]
 
 def cmd(entities):
     return random.choice(text)
