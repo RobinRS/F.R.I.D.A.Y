@@ -1,8 +1,8 @@
 import random
 
 def cmd(entities):
-    answerList = ["Sehr gut!, aber kann es einem Programm eigentlich schlecht gehen?",
-    "Gut!, aber habe ich überhaupt Gefühle?",
-    "Gut würde ich sagen!", "Ausgezeichnet, Sir und ihnen?",
-    "Wie immer bestens Sir, und ihnen?", "Ausgezeichnet!"]
+    answerList = ["Very good! But can a program be in a bad way?",
+    "Good! But do I have feelings at all?",
+    "Good I would say!" , "Excellent, sir and you?",
+    "As always good Sir, and you?", "Excellent!"]
     return random.choice(answerList)
