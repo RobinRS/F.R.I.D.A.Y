@@ -7,8 +7,8 @@
 # Friday Command_Executing
 
 
-defaultReturnUnable = "Tut mir leid Sir, das kann ich leider noch nicht."
-noIntentDetected = "Tut mir leid Sir, manche Funktionen sind noch nicht vervollständigt."
+defaultReturnUnable = "I'm sorry, Sir, I can't do that yet."
+noIntentDetected = "Sorry, this intent isn't described here."
 
 def command(intents, entities):
     try:
@@ -36,17 +36,9 @@ def command(intents, entities):
         from .scripts import date_specific
         return date_specific.cmd(entities)
 
-    elif (intent == "date_exact"):
-        from .scripts import date_exact
-        return date_exact.cmd(entities)
-
     elif (intent == "system_time"):
         from .scripts import system_time
         return system_time.cmd(entities)
-
-    elif(intent == "wiki"):
-        from .scripts import wiki
-        return wiki.cmd(entities)
 
     elif(intent == "get_gps_location"):
         from .scripts import get_gps_location
@@ -71,6 +63,10 @@ def command(intents, entities):
     elif(intent == "open"):
         from .scripts import open
         return open.cmd(entities)
+        
+    elif(intent == "birthplace"):
+        from .scripts import birthplace
+        return birthplace.cmd(entities)
 
     else:
         return noIntentDetected
