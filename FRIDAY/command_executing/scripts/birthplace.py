@@ -1,6 +1,6 @@
 import random
 
-text = ["Ich stamme aus einer Festplatte in einem Laptop.", "Ich komme aus dem Süden."]
+text = ["I'm off a hard drive from a laptop", "I'm from the northern part of the world."]
 
 def cmd(entities):
     return random.choice(text)
