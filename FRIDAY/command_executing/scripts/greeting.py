@@ -1,6 +1,8 @@
+# The basic architecture of a function-module: returns a random text
+
 import random
 
-greetings = ["Hallo Sir!", "Ich bin bereit", "Guten Tag, Sir!"]
+greetings = ["Hello Sir!", "I'm ready", "Good day, Sir!"]
 
 def cmd(entities):
     return random.choice(greetings)
