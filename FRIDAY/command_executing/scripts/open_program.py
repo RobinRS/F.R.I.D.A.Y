@@ -1,17 +1,16 @@
-# Zum Ausführen von Befehlen in der cmd
+# For executing the command in cmd
 import subprocess
 
-# Um das Programm zu schließen, wenn die Konfigurations-Datei nicht gefunden werden konnte
 import sys
 
-# Zufällige Antworten
+# Random answers
 import random
-# Um das Verzeichniss von diesem Skript herauszufinden
+# For finding the path of this script
 import pathlib
 
 
-answerSuccessList = ['Ok, ich öffne nun', 'Ok, ich starte nun']
-unableFindProgramAnswers = ['Sir, ich finde dieses Programm leider nicht.', 'Sir, ich kann dieses Programm leider nicht öffnen.']
+answerSuccessList = ["Ok, I'm now opening", "Ok, I'm now starting"]
+unableFindProgramAnswers = ["Sir, I can't find this program", "Sir, I'm unable to find this program."]
 
 
 def parseConfFile(textFile):
@@ -23,19 +22,19 @@ def parseConfFile(textFile):
         keyword = parsedText[0]
         path = parsedText[1]
 
-        # Füge das neue Paar ins Dictionary ein, damit die dann abgefragt werden können
+        # Add the new pair to the dictionary so that they can then be queried
         pathDict[keyword] = path
 
     return pathDict
 
 
 def open_program(program):
-    # Alle buchstaben des programs, eingegeben vom User klein machen, um das Matching zu verbessern
+    # Lower all letters of the program entered by the user in order to improve the matching
     program = program.lower()
 
-    # Öffne die Datei, die die Pfade anhand der Keywords enthält, Lesemodus
+    # Open the file that contains the paths based on the keywords in read mode
     try:
-        # Die Datei befindet sich im gleichen Verzeichniss, also das Verzeichniss von diesem Skript (pathlib)
+        # The file is in the same directory, i.e. the directory of this script (pathlib)
         textFile = open(str( pathlib.Path(__file__).parent.absolute() ) + r"\program_list.txt", "r")
     except:
         print("Ich finde die Konfigurations-Datei nicht!")
@@ -46,10 +45,10 @@ def open_program(program):
 
 
     try:
-        # Bekomme den Pfad aus dem Dictionary anhand des Keywords vom Client
+        # Get the path from the dictionary based on the keyword from the client
         path = pathDict[program]
 
-        # Wichtig: Beim parsen wird bei allen (außer dem letzten Element, deswegen if not) noch eine neue Zeile hinzugefügt, diese wird hier gelöscht
+        # Important: When parsing, a new line is added to all of them (except for the last element, therefore if not); it is deleted here
         if not (program == list(pathDict)[-1]):
             path = path[:-1]
 
