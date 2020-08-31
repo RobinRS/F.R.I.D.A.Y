@@ -1,6 +1,8 @@
 from datetime import date, timedelta
 import time
 
+# Gives you the date of yesterday, today and tomorrow. The keywords (y,t,to) are extracted as entities from wit.ai
+
 def cmd(entities):
     try:
         date_asked = entities['date_specific:date_specific'][0]['body']
@@ -20,5 +22,5 @@ def cmd(entities):
 
     elif (date_asked == "tomorrow"):
         tomorrow = date.today() + timedelta(days=1)
-        dateTomorrow = "Tommorrow we will have the " + str(tomorrow.strftime("%d")) + ". " + str(tomorrow.strftime("%m")) + ". " + str(tomorrow.strftime("%Y")) + "."
+        dateTomorrow = "Tomorrow we will have the " + str(tomorrow.strftime("%d")) + ". " + str(tomorrow.strftime("%m")) + ". " + str(tomorrow.strftime("%Y")) + "."
         return dateTomorrow
