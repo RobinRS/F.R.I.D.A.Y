@@ -1,5 +1,4 @@
-# Welches Datum heute
-
+# Which day we have today
 
 from datetime import date, timedelta
 import time
