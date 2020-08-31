@@ -1,3 +1,7 @@
+# Returns your location based on the website mycurrentlocation.net which uses gps
+# Parses this website with selenium
+
+
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.support.ui import WebDriverWait
@@ -11,12 +15,10 @@ time_sleep = 3
 def getLocation():
     chrome_options = Options()
     chrome_options.add_argument("--use-fake-ui-for-media-stream")
-    # Man soll den Browser nicht sehen, also; headless funktioniert nicht, da sonst gps nicht aktiviert wird!
-    #chrome_options.add_argument("headless")  
 
     timeout = 20
 
-    # Das Verzeichnis, in dem sich der Chrome-Driver (benötigt für Selenium) befindet: Ist das Script-Verzeichnis, also das selbe
+    # The directory in which the Chrome driver (required for Selenium) is located: Is the script directory, i.e. the same
     chrome_driver_path = str( str( pathlib.Path(__file__).parent.absolute() ) + r"\chromedriver.exe"   )
     print("Chrome-Driver Path:          ", chrome_driver_path)
 
@@ -43,18 +45,10 @@ def convert_to_location(coordinates):
 
     print(location.raw)
 
-    # Setze einen Antwort-Text aus der Addresse zusammen
+    # Put together an answer text from the address
     address = location.raw['address']
 
-    # Unterscheide zwischen: männlich: weg,.. ; weblich: straße,..
-    if("straße" in address['road']):
-        result = "Laut GPS befinden sie sich gerade in der "+ address['road'] + ', ' + address['town'] + ', ' + address['state'] + ', ' + address['country'] + '.'
-
-    elif("weg" in address['road']):
-        result = "Laut GPS befinden sie sich gerade im "+ address['road'] + ', ' + address['town'] + ', ' + address['state'] + ', ' + address['country'] + '.'
-
-    else:
-        result = "Laut GPS befinden sie sich gerade in "+ address['road'] + ', ' + address['town'] + ', ' + address['state'] + ', ' + address['country'] + '.'
+    result = "According to GPS, you are currently in "+ address['road'] + ', ' + address['town'] + ', ' + address['state'] + ', ' + address['country'] + '.'
         
     return result
 
