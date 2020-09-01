@@ -17,10 +17,13 @@ def parseConfFile(textFile):
     pathDict = {}
 
     for line in textFile:
-        
-        parsedText = str(line).split(" & ")
-        keyword = parsedText[0]
-        path = parsedText[1]
+        try:
+            parsedText = str(line).split(" & ")
+            keyword = parsedText[0]
+            path = parsedText[1]
+        except:
+            # There's something wrong with the program_list.txt
+            return "There's an error with the program_list.txt! Check if verything is in right orderer there, eg. missing a '&' ?"
 
         # Add the new pair to the dictionary so that they can then be queried
         pathDict[keyword] = path
@@ -52,7 +55,11 @@ def open_program(program):
         if not (program == list(pathDict)[-1]):
             path = path[:-1]
 
-        subprocess.Popen(path)
+        try:
+            subprocess.Popen(path)
+        except:
+            # This happens, if there's a invalid path in the program_list.txt
+            return random.choice(unableFindProgramAnswers)
 
         textFile.close()
 

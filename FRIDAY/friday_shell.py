@@ -10,9 +10,13 @@
 
 import friday_core as core
 
-while (True):
-    msg = input("> ")
-    if (msg == "/stop"):
-        break
-    output = core.friday_core(msg)
-    print(output)
+def main():
+    while (True):
+        msg = input("> ")
+        if (msg == "/stop"):
+            break
+        output = core.friday_core(msg)
+        print(output)
+
+if __name__ == "__main__":
+    main()

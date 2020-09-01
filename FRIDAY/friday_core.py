@@ -8,6 +8,7 @@
 
 
 import sys
+import wit
 from wit import Wit
 import config
 
@@ -18,15 +19,17 @@ access_token = config.WIT_ACCESS_TOKEN
 client = Wit(access_token=access_token)
 
 def handle_message(response):
-    print(response)
-    print()
+    if(config.PRINT_WIT_INFO):
+        print(response)
+        print()
 
     intents = (response['intents'])
     entities = (response['entities'])
     return CE.command(intents, entities)
-    
-    print()
 
 
 def friday_core(text):
-    return handle_message(client.message(text))
+    try:
+        return handle_message(client.message(text))
+    except wit.wit.WitError:
+        return "Sorry, I did not understand you."
