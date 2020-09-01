@@ -22,4 +22,4 @@ For setting up your own version of F.R.I.D.A.Y please read the SETUP.docx docume
 
 F.R.I.D.A.Y is active and under development so contributing is very appreciated, please read the How to contribute.docx.
 
-For question, suggestions, etc. please join the discord server: https://discord.gg/BFxVZ6
+For questions, suggestions, etc. please join the discord server: https://discord.gg/BFxVZ6
