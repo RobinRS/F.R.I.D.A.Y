@@ -10,7 +10,7 @@ F.R.I.D.A.Y is very easy to use, and is there to be extended by you. It's the ke
 
 How do I add my own functions (called function-modules)?
 
-![alt tag](/Images/Explaining/function-module process/function_module_process.png) 
+![alt tag](/Images/Explaining/function-module process/function_module_process.png)
 
 SETUP:
 For setting up your own version of F.R.I.D.A.Y please read the SETUP.docx document!
