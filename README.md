@@ -9,7 +9,7 @@ The power of F.R.I.D.A.Y for a developer is the flexibility: You are able to cre
 F.R.I.D.A.Y is very easy to use, and is there to be extended by you. It's the key feature that you write your own function-modules, make it a server or combine it with your mobile Speech-To-Text App on your phone.
 
 How do I add my own functions (called function-modules)?
-![alt tag](Images/Explaining/function-module process/function_module_process.png) 
+![alt tag](/Images/Explaining/function-module process/function_module_process.png) 
 
 SETUP:
 For setting up your own version of F.R.I.D.A.Y please read the SETUP.docx document!
