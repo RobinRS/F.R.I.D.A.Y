@@ -8,6 +8,8 @@ The power of F.R.I.D.A.Y for a developer is the flexibility: You are able to cre
 
 F.R.I.D.A.Y is very easy to use, and is there to be extended by you. It's the key feature that you write your own function-modules, make it a server or combine it with your mobile Speech-To-Text App on your phone.
 
+![alt tag](https://github.com/Tristi-X/F.R.I.D.A.Y/blob/master/Images/Example%20Screenshot.png)
+
 # How do I add my own functions (called function-modules)?
 
 ![alt text](https://github.com/Tristi-X/F.R.I.D.A.Y/blob/master/Images/Explaining/function-module%20process/function_module_process.png)
@@ -20,4 +22,4 @@ For setting up your own version of F.R.I.D.A.Y please read the SETUP.docx docume
 
 F.R.I.D.A.Y is active and under development so contributing is very appreciated, please read the How to contribute.docx.
 
-For question, suggestions, etc. please join the discord server: https://discord.gg/BFxVZ6
+For questions, suggestions, etc. please join the discord server: https://discord.gg/ZsJE7Z8
