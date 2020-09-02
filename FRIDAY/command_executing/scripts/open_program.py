@@ -40,7 +40,7 @@ def open_program(program):
         # The file is in the same directory, i.e. the directory of this script (pathlib)
         textFile = open(str( pathlib.Path(__file__).parent.absolute() ) + r"\program_list.txt", "r")
     except:
-        print("Ich finde die Konfigurations-Datei nicht!")
+        print("I'm unable to find the program_list.txt!'")
         sys.exit(0)
 
     # Get the pair keyword-program_path out of the conf_file (program_list.txt)
