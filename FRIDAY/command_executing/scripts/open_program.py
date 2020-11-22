@@ -1,4 +1,4 @@
-# For executing the command in cmd
+# For executing the Function_Module in cmd
 import subprocess
 
 import sys
@@ -23,7 +23,7 @@ def parseConfFile(textFile):
             path = parsedText[1]
         except:
             # There's something wrong with the program_list.txt
-            return "There's an error with the program_list.txt! Check if verything is in right orderer there, eg. missing a '&' ?"
+            return "There's an error in program_list.txt!"
 
         # Add the new pair to the dictionary so that they can then be queried
         pathDict[keyword] = path
@@ -40,7 +40,7 @@ def open_program(program):
         # The file is in the same directory, i.e. the directory of this script (pathlib)
         textFile = open(str( pathlib.Path(__file__).parent.absolute() ) + r"\program_list.txt", "r")
     except:
-        print("I'm unable to find the program_list.txt!'")
+        return "Sir, I can't find program_list.txt!"
         sys.exit(0)
 
     # Get the pair keyword-program_path out of the conf_file (program_list.txt)

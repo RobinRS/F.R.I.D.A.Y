@@ -12,24 +12,33 @@ import wit
 from wit import Wit
 import config
 
-import command_executing.command_executing as CE
-
-access_token = config.WIT_ACCESS_TOKEN
-
-client = Wit(access_token=access_token)
-
-def handle_message(response):
-    if(config.PRINT_WIT_INFO):
-        print(response)
-        print()
-
-    intents = (response['intents'])
-    entities = (response['entities'])
-    return CE.command(intents, entities)
+#      folder            script            class
+from command_executing.command_executing import command_executing
 
 
-def friday_core(text):
-    try:
-        return handle_message(client.message(text))
-    except wit.wit.WitError:
-        return "Sorry, I did not understand you."
+class Friday_Core:
+
+    def __init__(self):
+        self.runtime_information = config.RUNTIME_INFORMATION
+        self.command_executing = command_executing(self.runtime_information)
+        self.access_token = config.WIT_ACCESS_TOKEN
+
+        self.client = Wit(access_token=self.access_token)
+
+    def handle_message(self, response):
+        if(self.runtime_information):
+            print(response)
+            print()
+
+        intents = (response['intents'])
+        entities = (response['entities'])
+        return self.command_executing.command(intents, entities)
+
+
+    def friday_core(self, text):
+        try:
+            return self.handle_message(self.client.message(text))
+        except wit.wit.WitError:
+            return "Sorry I did not understand you, please check your input! --- Also don't forget to paste your wit access token in config.py"
+        except ConnectionError:
+            return "Sorry Sir, I think I'm not connected to the internet!"

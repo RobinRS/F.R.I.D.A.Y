@@ -1,6 +1,10 @@
+from .Function_Module import Function_Module
 import random
 
-text = ["I'm off a hard drive from a laptop", "I'm from the northern part of the world."]
+class birthplace(Function_Module):
+    name = "birthplace"
+    help_description = "From where I come"
 
-def cmd(entities):
-    return random.choice(text)
+    def respond(self, entities):
+        answerList = ["I'm off a hard drive from a laptop", "I'm from the northern part of the world."]
+        return random.choice(answerList)

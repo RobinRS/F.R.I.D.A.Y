@@ -1,18 +1,24 @@
-def url(urlEntitie):
-    from . import open_website
-    return open_website.open_website(urlEntitie)
+from .Function_Module import Function_Module
 
-def program(programEntitie):
-    from . import open_program
-    return open_program.open_program(programEntitie)
+class open(Function_Module):
+    name = "open"
+    help_description = "Opens a website, or a program defined in program_list.txt."
 
-def cmd(entities):
-    try:
-        urlEntitie = entities['wit$url:url'][0]['body']
-        return url(urlEntitie)
-    except KeyError:
+    def url(self, urlEntitie):
+        from . import open_website
+        return open_website.open_website(urlEntitie)
+
+    def program(self, programEntitie):
+        from . import open_program
+        return open_program.open_program(programEntitie)
+
+    def respond(self, entities):
         try:
-            programEntitie = entities['thing_to_open:thing_to_open'][0]['body']
-            return program(programEntitie)
+            urlEntitie = entities['wit$url:url'][0]['body']
+            return self.url(self, urlEntitie)
         except KeyError:
-            return "Sorry Sir, I don't understand what I should open."
+            try:
+                programEntitie = entities['thing_to_open:thing_to_open'][0]['body']
+                return self.program(self, programEntitie)
+            except KeyError:
+                return "Sorry Sir, I don't understand what I have to open."

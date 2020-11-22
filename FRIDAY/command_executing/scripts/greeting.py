@@ -1,8 +1,13 @@
-# The basic architecture of a function-module: returns a random text
-
+from .Function_Module import Function_Module
 import random
 
-greetings = ["Hello Sir!", "I'm ready", "Good day, Sir!"]
+class greeting(Function_Module):
+    name = "greeting"
+    help_description = "Just saying hello."
 
-def cmd(entities):
-    return random.choice(greetings)
+    greetings = ["Hello Sir!", "I am ready, Sir", "Good Day, Sir!", "Welcome, Sir!"]
+
+    def respond(self, entities):
+        response = random.choice(self.greetings)
+
+        return response

@@ -1,1 +1,1 @@
-browser_path = "PASTE IN YOUR BROWSER PATH"
+browser_path = "C:\Program Files\Google\Chrome\Application\chrome.exe"

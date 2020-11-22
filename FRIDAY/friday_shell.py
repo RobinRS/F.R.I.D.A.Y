@@ -8,14 +8,16 @@
 # Just a simple command-line tool to implement the F.R.I.D.A.Y Core
 
 
-import friday_core as core
+from friday_core import Friday_Core as core
 
 def main():
+    friday = core()
+
     while (True):
         msg = input("> ")
         if (msg == "/stop"):
             break
-        output = core.friday_core(msg)
+        output = friday.friday_core(msg)
         print(output)
 
 if __name__ == "__main__":
