@@ -7,7 +7,7 @@ For any error, please create a new issue on the GitHub page, or write in the dis
 
 ### Setup your Wit.ai App
 1.	Go to: wit.ai
-2.	Create a new Project (you need to login with Facebook) and give it a name: Because of the flexibility of the F.R.I.D.A.Y Framework, because of the flexibility it doesn't matter which name you take, choose one you like!
+2.	Create a new Project (you need to login with Facebook) and give it a name: Because of the flexibility of the F.R.I.D.A.Y Framework, it doesn't matter which name you take, choose one you like!
 3.	Also choose the language, which, like the name, does not matter because of the neutral behave of F.R.I.D.A.Y. But it’s recommended to use English because for example when you want to have text to speech output later, English is better supported and the standard functions in here are all in English.
 4.	On the left side, click on settings and copy the Server Access Token.
 5.	Go to FRIDAY/config.py and paste the Server Access Token to the variable WIT_ACCESS_TOKEN.
