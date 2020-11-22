@@ -90,6 +90,6 @@ class command_executing:
     def printScripts(self):
         if(self.runtime_information):
             print('\n' + "Detected Function_Modules:")
-            # Gebe alle gefundenen Scripts aus
+            # Print detected function_modules
             for cmd in self.command_classes:
                 print(cmd.name)
