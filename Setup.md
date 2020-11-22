@@ -27,12 +27,40 @@ Make sure, to insert the real path to your FRIDAY directory!
 2.2	Click on the intent box and type in greeting for creating a new intent and click on create intent.
 2.3	Click on Train and Validate.
 2.4	Do this again with a few other types of saying Hello.
-3.	Now look at FRIDAY\command_executing\scripts. You will see, the first if statement:
+3.	Look at scripts/greeting.py:
 ###
-      if (intent == "greeting"):
-              from .scripts import greeting
-              return greeting.cmd(entities)
-This means, that when wit.ai recognizes greeting as the intent, Friday will get the returned answer from the script greeting: FRIDAY\command_executing\scripts\greeting.py, especially the method cmd(entities) returns the answer. For more info please read the documentation.
+      from .Function_Module import Function_Module
+      import random
+
+      class greeting(Function_Module):
+            name = "greeting"
+            help_description = "Just saying hello."
+
+            greetings = ["Hello Sir!", "I am ready, Sir", "Good Day, Sir!", "Welcome, Sir!"]
+
+            def respond(self, entities):
+                  response = random.choice(self.greetings)
+
+            return response
+        
+A function_module script must have these components:
+###
+      from .Function_Module import Function_Module
+The class called as the name of the function, (command, intent):
+###
+      class greeting(Function_Module):
+Very important:
+#### name: EXACTLY the same name as the name of the intent from wit.ai
+help_description: what it does
+###
+      name = "greeting"
+      help_description = "Just saying hello."
+
+And a respond method which returns the output:
+###
+      def respond(self, entities):
+        
+This means, that when wit.ai recognizes greeting as the intent, Friday will get the returned answer from the script greeting: FRIDAY\command_executing\scripts\greeting.py, especially the method respond(entities) returns the answer. For more info please read the documentation.
 4.	Now run again friday_shell.py and type in “Hello Friday!”. You should now get an answer like “Hello Sir!”
 5.	You can add more greetings by adding sentences in the list greetings at the greeting.py script:
   ###
@@ -40,5 +68,7 @@ This means, that when wit.ai recognizes greeting as the intent, Friday will get 
 
 
 ### Adding the functionality
-1.	By looking in the command-executing scripts, you can see, that there are many more commands and functions you can execute by communicate with the F.R.I.D.A.Y Framework. All of these are designed to be executed when a special intent is detected. So, you have to create all these intents in your wit app, and take the names described in the command-executing script.
-2.	For creating a new functionality, create a new intent, give it a very clear name and train it. Then create a new if statement in the command-executing.py and create a new script with the same name. Then in the if-statement, import this script and execute the cmd(entities) method, which takes the entities as parameter. Create this method in your script and return an answer at the end. Orient yourself on the already existing connections of if-statement and script, e.g. the simple greeting script.
+1.	By looking in the command-executing scripts, you can see, that there are many more commands and functions you can execute by communicate with the F.R.I.D.A.Y Framework. All of these are designed to be executed when a special intent is detected. So, you have to create all these intents in your wit app, with a *specific* name.
+2.	For creating a new functionality, create a new intent, give it a very clear name and train it. The create a new script in the scripts folder with the same name as
+the intent, with a class with the same name, the name variable ,a respond method and all the other required thing mentioned above. I hardly recommend you to look at the other
+scripts in order to understand the logic behind them.
